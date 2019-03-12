@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html land="en">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+<!--stles-->
+<style>
+body
+{
+background-color:#dcdde1;
+}
+.input_field form-control
+{
+width:20%;
+}
+.button{
+color:red;
+}
+.modal-content {
+    background-color: #fefefe;
+	color:#d63031;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+	width:80%;
+}
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+</style>
+<!--bootsstrap cdn-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+</head>
+<body class="body">
+<div class="container text-right ">
+<div class="about">
+<br>
+<a href="abt1.html" class="btn btn-warning ">About</a>
+</div>
+</div>
+<div class="container">
+<br>
+<div class="jumbotron">
+<div class="jumb text-center">
+
+<h3 text-center>Enter your Credentials</h3>
+</div>
+<div class="row ">
+<br>
+<br>
+<form action="newlog.php" method="post">
+			 <div class="col-lg-4 col-md-4"></div>
+            <div class="col-lg-4 col-md-4 box">
+            <input type="text" class="input_field form-control" id='user' placeholder="Name" name="name"><br>
+			
+            <input type="textarea" class="form-control" placeholder="Address" name="adr"><br>
+			
+		     <input type="text" class="input_field form-control" id='user' placeholder="Email" name="email"><br>
+			
+            <input type="number" class="form-control" placeholder="Phone Number" name="phn"><br>
+			
+			<input type="text" class="form-control" placeholder="Referal Code" name="ref"><br>
+			
+			<input type="checkbox" name="valid" value="val">The informations are correct<br>
+			</div>
+			</div>
+			<div class="ju text-center"><br>
+            <input type="submit" class="btn  btn-warning" value="Submit" id="btn"></input><br><br><br>
+			</form>
+			
+			<button id="back" class="btn btn-success">Already a IOT SMART USER</button><br><br><br>
+			<script type="text/javascript">
+			document.getElementById("back").onclick = function () {
+        location.href = "index.html";
+			};
+				</script>
+			
+			
+			</div>
+			</div>
+			</div>
+</div>
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+	<?php
+	
+	?>
+    <h3><b></b>Thank You..Will be contacted soon..</b>.</h3>
+  </div>
+  </DIV>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("btn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+<!--source files-->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<?php
+session_start();
+// Do Something
+?>
+<!DOCTYPE html>
+<html land="en">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<META Http-Equiv="Cache-Control" Content="no-cache">
+<META Http-Equiv="Pragma" Content="no-cache">
+<META Http-Equiv="Expires" Content="0">
+<head>
+    <script type = "text/javascript" >
+   function preventBack(){window.history.forward();}
+    setTimeout("preventBack()", 0);
+    window.onunload=function(){null};
+</script>
+    <script type="text/javascript">
+        window.history.forward(-1);
+    </script>
+<!--stles-->
+<style>
+body
+{
+background-color:#dcdde1;
+}
+.input_field form-control
+{
+width:20%;
+}
+.button{
+color:red;
+}
+</style>
+<!--bootsstrap cdn-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+</head>
+<body class="body">
+<div class="container text-right ">
+<div class="about">
+<br>
+<a href="abt.html" class="btn btn-warning ">About</a>
+
+</div>
+</div>
+<div class="container">
+<br>
+<div class="jumbotron">
+<div class="jumb text-center">
+
+<h1 text-center>Welcome</h1>
+</div>
+<div class="row ">
+<br>
+<br>
+			 <div class="col-lg-4 col-md-4"></div>
+            <div class="col-lg-4 col-md-4 box">
+			<form action="login_val.php" method="post">
+            <input type="text" class="input_field form-control" id='user' placeholder="User Id" name="username"><br>
+			<br>
+            <input type="PASSWORD" class="form-control" placeholder="password" name="password"><br>
+			<br>
+			</div>
+			</div>
+			<div class="ju text-center">
+            <button type="submit" class="btn  btn-primary" id="btn"><b>Sign in</b></button><br><br><br>
+			</form>
+			 <a href="forgot.html">Forgot Password?</a>
+			 <button class="btn btn-success" id="btn1">Need a Smart Controller</button><br><br><br>
+			 <script type="text/javascript">
+			document.getElementById("btn1").onclick = function () {
+        location.href = "NEWRES.HTML";
+			};
+		
+				</script>
+			
+			</div>
+			</div>
+			</div>
+</div>
+
+<!--source files-->
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!--<script>
+    	$(document).ready(function() {
+        function disableBack() { window.history.forward() }
+
+        window.onload = disableBack();
+        window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
+    });
+</script>-->
+
+</body>
+</html>

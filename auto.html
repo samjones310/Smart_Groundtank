@@ -1,0 +1,80 @@
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+			 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="./IOT GROUND TANK_files/jquery.min.js.download"></script>
+    <link rel="stylesheet" href="./IOT GROUND TANK_files/bootstrap.min.css">
+    <script src="./IOT GROUND TANK_files/bootstrap.js.download"></script>
+            <script type="text/javascript">
+            function countDown(secs, elem)
+            {
+                var element = document.getElementById(elem);
+                element.innerHTML = "<h2>You have <b>"+secs+"</b> seconds to answer the questions</h2>";
+                if(secs < 1) {
+                    document.quiz.submit();
+                }
+                else
+                {
+                    secs--;
+                    setTimeout('countDown('+secs+',"'+elem+'")',1500);
+                }
+            }
+
+            function validate() {
+                return true;
+            }
+            </script> 
+            <div id="status"></div>
+            <script type="text/javascript">countDown(16,"status");</script>
+            <title>Questionnaire</title>
+            <style type="text/css"> 
+            span { 
+                color: #FF00CC;
+            }
+            </style>
+        </head>
+        <body>
+            <h1>Please complete the following Survey</h1>
+            <form name="quiz" id="myquiz" onsubmit="return validate()" method="post" action="te1.php">
+              <input type="text" id="name" value="" name="name" ><br>
+			<input type="text" id="flow" value="" name="flow" ><br>
+			<input type="text" id="dist" value="" name="dist"><br>
+			<input type="text" id="tota" value="" name="tota" ><br>
+			<input type="text" id="time" value="" name="time" ><br>
+			<input type="text" id="entr" value="" name="entr"><br>
+			<input type="text" id="last" value="" name="last" ><br>
+             <input type="submit" name="submitbutton" value="Go"></input>
+             <input type="reset" value="clear all"></input>
+            </form>
+			<script>
+var myObj, myJSON, text, obj;
+
+//Storing data:
+//myObj = {"channel":{"id":417010,"name":"wa","description":"water levvel","latitude":"0.0","longitude":"0.0","field1":"SEBNSOR","field2":"flow rate","created_at":"2018-02-01T17:53:34Z","updated_at":"2018-04-14T18:59:37Z","last_entry_id":606},"feeds":[{"created_at":"2018-04-14T18:59:20Z","entry_id":605,"field1":"100","field2":"100"},{"created_at":"2018-04-14T18:59:37Z","entry_id":606,"field1":"100","field2":"100"}]}
+//myObj = JSONRequest.get("https://api.thingspeak.com/channels/417010/feeds.json?results=2");
+//alert(myObj);
+
+    $.getJSON("https://api.thingspeak.com/channels/417010/fields/1.json?results=2", function(data) {
+        
+        var myObj = data;
+        console.log(myObj);
+		
+myJSON = JSON.stringify(myObj);
+localStorage.setItem("testJSON", myJSON);
+
+//Retrieving data:
+text = localStorage.getItem("testJSON");
+obj = JSON.parse(text);
+document.getElementById("name").value = obj.channel.name;
+document.getElementById("flow").value = obj.feeds[0].field1;
+document.getElementById("dist").value = obj.feeds[0].field2;
+document.getElementById("tota").value= obj.feeds[0].field1;
+document.getElementById("time").value= obj.feeds[0].field2;
+document.getElementById("entr").value = obj.feeds[0].entry_id;
+document.getElementById("last").value= obj.feeds[0].created_at;
+    });
+
+</script>
+        </body>
+    </html
